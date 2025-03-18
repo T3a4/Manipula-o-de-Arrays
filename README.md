@@ -2,28 +2,26 @@ using System;
 
 internal class Program
 {
-    private static void Main(string[] args)
+    private static void Main()
     {
+        // Declarar um array de 6 inteiros
         int[] numeros = new int[6];
-
-        // Inserir 6 números inteiros 
-        Console.WriteLine("Digite 6 números == pressione Enter para cada número == ");
-        Console.Write("Leia 6 números == pressione Enter para cada número == ");
-
-        // Preencher e processar vetor de inteiros
-        int[] vetor = new int[6];
         int soma = 0;
 
-        // Calcular a soma
-        foreach (int num in vetor)
+        // Solicitar que o usuário insira 6 números
+        for (int i = 0; i < 6; i++)
         {
-            soma = soma + num;
+            Console.WriteLine($"Digite o {i + 1}º número:");
+            numeros[i] = int.Parse(Console.ReadLine());
         }
 
-        // Exibir resultado
-        Console.WriteLine("\nSoma de todos os números: * + soma");
+        // Calcular a soma de todos os números
+        for (int i = 0; i < 6; i++)
         {
-
+            soma += numeros[i];
         }
+
+        // Exibir o resultado da soma
+        Console.WriteLine($"A soma dos números inseridos é: {soma}");
     }
 }
